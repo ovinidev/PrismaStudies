@@ -66,7 +66,7 @@ coursesRoutes.post('/', async (req, res) => {
 			},
 		});
 
-		return res.json({ course });
+		return res.status(201).json({ course });
 	} catch (err) {
 		if (err instanceof z.ZodError) {
 			const error = err.issues[0].message;

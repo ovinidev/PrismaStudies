@@ -61,7 +61,7 @@ teachersRoutes.post('/', async (req, res) => {
 			},
 		});
 
-		return res.json({ teacher });
+		return res.status(201).json({ teacher });
 	} catch (err) {
 		if (err instanceof z.ZodError) {
 			const error = err.issues[0].message;
